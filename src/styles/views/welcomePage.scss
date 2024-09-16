@@ -1,0 +1,53 @@
+@import './../global';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 25px;
+  text-align: center;
+
+  .header {
+    margin: 70px 0 60px 0;
+    width: 206px;
+    height: 206px;
+    border: 2px solid black;
+    background-color: $primary-red;
+    border-radius: 50%;
+    position: relative;
+
+    .pikachu-image {
+      width: 325px;
+      height: auto;
+      position: absolute;
+      bottom: -13px;
+      right: -70px;
+    }
+  }
+
+  .content {
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      line-height: 31.2px;
+    }
+
+    p {
+      font-size: 18px;
+      color: $grey-800;
+      font-weight: 500;
+      margin-bottom: 50px;
+      max-width: 315px;
+      line-height: 27px;
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .container .content p {
+    max-width: 570px;
+  }
+}
