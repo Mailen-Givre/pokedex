@@ -1,11 +1,13 @@
 import { capitalizePokemons } from '@/composables/capitalizePokemons';
 import { pokemonService } from '@/services/pokemonService';
 
+const FAVORITES_STORAGE_KEY = 'pokemon_favorites';
+
 export const pokemon = {
   namespaced: true,
   state: {
     list: [],
-    favorites: [],
+    favorites: JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY) || '[]'),
     loading: false,
     error: null,
     showingFavorites: false
@@ -16,9 +18,11 @@ export const pokemon = {
     },
     ADD_FAVORITE(state, pokemon) {
       state.favorites.push(pokemon);
+      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites));
     },
     REMOVE_FAVORITE(state, pokemonId) {
       state.favorites = state.favorites.filter(p => p.id !== pokemonId);
+      localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(state.favorites));
     },
     SET_LOADING(state, isLoading) {
       state.loading = isLoading;
