@@ -1,0 +1,23 @@
+@import './../../global.scss';
+
+.primary-button {
+  background-color: $primary-red;
+  color: white;
+  border: none;
+  border-radius: 60px;
+  padding: 11px 20px;
+  font-size: 18px;
+  line-height: 21.6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $secondary-red;
+  }
+
+}
+
+.primary-button--disabled {
+  background-color: $grey-600;
+}

@@ -1,0 +1,15 @@
+.pokemon-card{
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px 8px 20px ;
+    border-radius: 5px;
+
+    h1{
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 26.4px;
+    }
+}

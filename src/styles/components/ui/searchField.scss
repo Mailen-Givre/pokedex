@@ -1,0 +1,36 @@
+@import './../../global.scss';
+
+.input-container {
+  position: relative;
+  margin-bottom: 40px;
+
+  input {
+    width: 100%;
+    padding-left: 43px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: white;
+    box-shadow: 0px 2px 10px 0px #0000000A;
+    font-size: 16px;
+    line-height: 22.4px;
+    box-sizing: border-box;
+
+    //font-family: Montserrat;
+    &::placeholder {
+      color: $grey-600;
+    }
+
+    &:not(:placeholder-shown) {
+      color: $grey-900;
+    }
+  }
+
+  img {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
