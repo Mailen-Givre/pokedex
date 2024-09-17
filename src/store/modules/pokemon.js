@@ -52,15 +52,12 @@ export const pokemon = {
     },
     async searchPokemon({ commit }, name) {
       try {
-        //commit('SET_LOADING', true);
         const pokemon = await pokemonService.getPokemonByName(name);
         const capitalizedPokemon = pokemon ? capitalizePokemons([pokemon]) : [null];
         commit('SET_POKEMONS', capitalizedPokemon);
         commit('SET_SHOWING_FAVORITES', false);
       } catch (error) {
         commit('SET_ERROR', error.message);
-      } finally {
-        //commit('SET_LOADING', false);
       }
     },
     toggleFavorite({ commit, state }, pokemon) {

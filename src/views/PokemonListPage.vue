@@ -11,7 +11,7 @@
       <div class="pokemon-list">
         <SearchField @search="handleSearch" />
         <div v-if="pokemons.length > 0" class="pokemon-list-content">
-          <div v-for="pokemon in pokemons" :key="pokemon.id">
+          <div v-for="pokemon in pokemons" :key="pokemon.id" @click="handleModal(pokemon)">
             <PokemonCard :pokemon="pokemon" />
           </div>
         </div>
@@ -22,6 +22,7 @@
 
       </div>
       <FooterBar @showAll="fetchPokemons" @showFavorites="showFavorites" />
+      <PokemonModal v-show="showModal" :pokemon="pokemonSelected" @closeModal="closeModal" />
     </div>
 
   </div>
@@ -35,6 +36,7 @@ import PokemonCard from '@/components/pokemon/PokemonCard.vue'
 import SearchField from '@/components/ui/SearchField.vue'
 import NoResultsMessage from '@/components/common/NoResultsMessage.vue'
 import FooterBar from '@/components/ui/FooterBar.vue'
+import PokemonModal from '@/components/pokemon/PokemonModal.vue'
 
 export default {
   name: 'PokemonList',
@@ -43,7 +45,14 @@ export default {
     PokemonCard,
     SearchField,
     NoResultsMessage,
-    FooterBar
+    FooterBar,
+    PokemonModal
+  },
+  data() {
+    return {
+      showModal: false,
+      pokemonSelected: null
+    };
   },
   computed: {
     ...mapState('pokemon', ['list', 'loading', 'error']),
@@ -64,14 +73,21 @@ export default {
       return parts[parts.length - 2];
     },
     handleSearch(searchQuery) {
-      console.log(searchQuery)
       if (searchQuery.trim() !== '') {
-        console.log('entra')
         this.searchPokemon(searchQuery);
       } else {
         this.fetchPokemons();
       }
     },
+    async handleModal(pokemon) {
+      await this.searchPokemon(pokemon.name)
+      this.pokemonSelected = this.pokemons[0]
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+      this.fetchPokemons();
+    }
   },
   created() {
     this.fetchPokemons();
