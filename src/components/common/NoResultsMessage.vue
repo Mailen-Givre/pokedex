@@ -2,7 +2,7 @@
   <div class="no-results-container">
     <h4>Uh-oh!</h4>
     <p>You look lost on your journey!</p>
-    <PrimaryButton buttonText='Go back home' @click="goToHome" />
+    <PrimaryButton buttonText='Go back home' @clickButton="goToHome" />
   </div>
 </template>
 

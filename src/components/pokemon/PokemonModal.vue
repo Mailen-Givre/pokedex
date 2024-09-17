@@ -2,21 +2,17 @@
     <div class="modal-backdrop">
         <div class="modal">
             <div class="modal-header">
-                <button class="close-button" @click="closeModal"><img src="@/assets/images/icons/close.svg"
-                        alt="CloseButton"></button>
+                <img class="close-button" @click="closeModal" src="@/assets/images/icons/close.svg" alt="Close" />
+                <img class="pokemon-image" :src="pokemon?.sprites" alt="Pokemon">
             </div>
             <div class="modal-body">
-                <div class="modal-image">
-                    <img :src="pokemon?.sprites" alt="Pokemon">
-                    <img src="@/assets/images/background.jpg" alt="Background" class="background-image" />
-                </div>
-                <div class="modal-content">
-                    <ul class="info-list">
-                        <li v-for="(value, label) in filteredLabels" :key="label"><strong>{{ capitalizeLetter(label)
-                                }}:</strong> {{ value }}
-                        </li>
-                    </ul>
-                    <PrimaryButton buttonText='Share to my friends' @click="share" />
+                <ul class="info-list">
+                    <li v-for="(value, label) in filteredLabels" :key="label"><strong>{{ capitalizeLetter(label)
+                            }}:</strong> {{ value }}
+                    </li>
+                </ul>
+                <div class="modal-footer">
+                    <PrimaryButton buttonText='Share to my friends' @clickButton="share" />
                     <FavoriteButton :isFavorite="isFavorite(pokemon?.id)" :pokemon="pokemon" />
                 </div>
             </div>

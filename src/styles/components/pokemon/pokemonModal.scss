@@ -16,68 +16,63 @@
         border-radius: 5px;
         width: 100%;
         position: relative;
+        overflow: hidden;
 
-        // .modal-header {
-        //     display: flex;
-        //     justify-content: flex-end;
+        &-header {
+            background-image: url('@/assets/images/background.jpg');
+            height: 220px;
+            background-position: center;
+            position: relative;
+            @extend .center-content;
 
-        //     .close-button {
-        //         background: transparent;
-        //         border: none;
-        //         font-size: 20px;
-        //         cursor: pointer;
-        //         font-weight: bold;
-        //         color: #666;
-
-        //         &:hover {
-        //             color: #333;
-        //         }
-        //     }
-        //}
-
-        .modal-body {
-            .modal-image {
-                height: 220px;
+            .pokemon-image {
+                width: 180px;
+                height: 180px;
+                object-fit: contain;
             }
 
-            .background-image {
-                object-fit: cover;
-            }
-
-            .modal-content {
-                padding: 20px 30px;
-
-                .info-list {
-                    list-style: none;
-                    padding: 0;
-                    margin-bottom: 20px;
-
-                    li {
-                        padding-bottom: 10px;
-                        border-bottom: 1px solid #E8E8E8;
-                        margin-bottom: 10px;
-                        font-size: 18px;
-
-                        strong {
-                            font-weight: bold;
-                        }
-                    }
-                }
-
-                .share-button {
-                    background-color: #e74c3c;
-                    color: white;
-                    padding: 10px 15px;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    font-size: 14px;
-
-                    &:hover {
-                        background-color: #c0392b;
-                    }
-                }
+            .close-button {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 26px;
+                height: 26px;
             }
         }
+
+
+        &-body {
+
+            padding: 20px 30px;
+
+            .info-list {
+                list-style: none;
+                padding: 0;
+                margin-bottom: 20px;
+
+                li {
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid #E8E8E8;
+                    margin-bottom: 10px;
+                    font-size: 18px;
+
+                    strong {
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .modal-footer {
+                @extend .center-content;
+                justify-content: space-between;
+                gap: 16px;
+            }
+        }
+    }
+}
+
+@media(min-width: $breakpoint-lg) {
+    .modal {
+        max-width: 570px;
     }
 }

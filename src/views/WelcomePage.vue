@@ -9,7 +9,7 @@
         The digital encyclopedia created by Professor Oak is an invaluable tool
         to Trainers in the Pokémon world.
       </p>
-      <PrimaryButton buttonText='Get started' @click="goToPokemonList" />
+      <PrimaryButton buttonText='Get started' @clickButton="goToPokemonList" />
     </div>
   </div>
 </template>

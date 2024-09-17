@@ -1,9 +1,9 @@
 <template>
     <div class="footer-bar">
         <div class="footer-bar-content">
-            <PrimaryButton buttonText='All' @click="showAll" :isSelected="isAllSelected"
+            <PrimaryButton buttonText='All' @clickButton="showAll" :isSelected="isAllSelected"
                 :imageSrc="require('@/assets/images/icons/all.svg')" imageAlt="All" />
-            <PrimaryButton buttonText='Favorites' @click="showFavorites" :isSelected="isFavoritesSelected"
+            <PrimaryButton buttonText='Favorites' @clickButton="showFavorites" :isSelected="isFavoritesSelected"
                 :imageSrc="require('@/assets/images/icons/star.svg')" imageAlt="Favorites" />
         </div>
     </div>
