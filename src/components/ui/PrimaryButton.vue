@@ -1,7 +1,7 @@
 <template>
   <button :class="{
     'primary-button': true,
-    'primary-button--disabled': isDisabled
+    'primary-button--not-selected': !isSelected
   }" @click="handleClick">
     <img v-if="imageSrc" :src="imageSrc" :alt="imageAlt" />
     {{ buttonText }}
@@ -17,10 +17,10 @@ export default {
       type: String,
       required: true
     },
-    isDisabled: {
+    isSelected: {
       type: Boolean,
       required: false,
-      default: false
+      default: true
     },
     imageSrc: {
       type: String,

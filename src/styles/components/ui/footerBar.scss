@@ -1,3 +1,5 @@
+@import './../../global.scss';
+
 .footer-bar {
     position: absolute;
     bottom: 0;
@@ -6,9 +8,7 @@
     box-shadow: 0px -5px 4px 0px #0000000D;
     width: 100%;
     z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend .center-content;
 
 
     &-content {
@@ -23,7 +23,7 @@
     }
 }
 
-@media(min-width: 768px) {
+@media(min-width: $breakpoint-lg) {
     .footer-bar-content {
         padding: 0;
         max-width: 570px;

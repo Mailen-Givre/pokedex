@@ -11,6 +11,8 @@
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  @extend .center-content;
+  gap: 10px;
 
   &:hover {
     background-color: $secondary-red;
@@ -18,6 +20,6 @@
 
 }
 
-.primary-button--disabled {
+.primary-button--not-selected {
   background-color: $grey-600;
 }

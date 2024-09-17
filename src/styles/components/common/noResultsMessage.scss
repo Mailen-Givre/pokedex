@@ -1,7 +1,8 @@
+@import './../../global.scss';
+
 .no-results-container {
-    display: flex;
+    @extend .center-content;
     flex-direction: column;
-    align-items: center;
     margin-top: 10px;
 
     h4 {

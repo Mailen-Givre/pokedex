@@ -5,9 +5,7 @@
     height: 44px;
     border-radius: 50%;
     background-color: $grey-200;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend .center-content;
     cursor: pointer;
 
     .favorite {
