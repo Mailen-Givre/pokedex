@@ -1,4 +1,4 @@
-import { capitalizeWord } from '@/composables/capitalizePokemons';
+import { capitalizeWord } from '@/utils/capitalizePokemons';
 import api from './api';
 
 export const pokemonService = {

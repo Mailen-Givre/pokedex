@@ -25,7 +25,7 @@ import '@/styles/components/pokemon/pokemonModal.scss'
 import PrimaryButton from '@/components/ui/PrimaryButton.vue'
 import FavoriteButton from '@/components/ui/FavoriteButton.vue'
 import { mapGetters } from 'vuex';
-import { capitalizeWord } from '@/composables/capitalizePokemons';
+import { capitalizeWord } from '@/utils/capitalizePokemons';
 export default {
     name: 'PokemonModal',
     components: {

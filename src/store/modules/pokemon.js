@@ -1,4 +1,4 @@
-import { capitalizePokemons } from '@/composables/capitalizePokemons';
+import { capitalizePokemons } from '@/utils/capitalizePokemons';
 import { pokemonService } from '@/services/pokemonService';
 
 const FAVORITES_STORAGE_KEY = 'pokemon_favorites';
