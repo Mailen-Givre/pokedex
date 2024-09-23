@@ -14,10 +14,15 @@ export default {
       searchQuery: ''
     }
   },
-  watch: {
-    searchQuery(newVal) {
-      this.$emit('search', newVal);
+  // watch: {
+  //   searchQuery(newVal) {
+  //     this.$emit('search', newVal);
+  //   }
+  // },
+  methods: {
+    handleSearch() {
+      this.$emit('search', this.searchQuery);
     }
-  },
+  }
 };
 </script>
